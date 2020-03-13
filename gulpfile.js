@@ -14,11 +14,13 @@ const gulp = require('gulp'),
       rename = require("gulp-rename"),
       imagemin = require('gulp-imagemin'),
       imageminMozjpeg = require('imagemin-mozjpeg'),
-      cache = require('gulp-cache'),
       pngquant = require('imagemin-pngquant'),
+      cache = require('gulp-cache'),
+      webp = require('gulp-webp'),
       uglify = require('gulp-uglify'),
-      // sourcemaps = require('gulp-sourcemaps'),
       concat = require('gulp-concat'); // merging all files into one output
+
+      // sourcemaps = require('gulp-sourcemaps'),
 
 //Create task
 gulp.task('sass', () => {
@@ -73,6 +75,7 @@ gulp.task('js-libs', () => {
   return gulp.src([
       'node_modules/jquery/dist/jquery.min.js',
       // 'node_modules/aos/dist/aos.js',
+      'node_modules/blazy/blazy.min.js',
     ])
     .pipe(gulp.dest('dist/js/libs/'))
     .pipe(concat('libs.js'))
@@ -84,12 +87,13 @@ gulp.task('js-libs', () => {
 
 gulp.task('img', () => {
   return gulp.src('src/img/**/*')
-      .pipe(cache(imagemin([
-        pngquant(),
-        imageminMozjpeg({
-            progressive: true
-        })
-      ],{verbose: true})))
+    .pipe(webp())
+    .pipe(cache(imagemin([
+      pngquant(),
+      imageminMozjpeg({
+          progressive: true
+      }),
+    ],{verbose: true})))
     .pipe(gulp.dest('dist/img/'))
     .pipe(browserSync.reload({stream: true}));
 });

@@ -2,7 +2,319 @@ extends _layout
 
 block vars
   - var pageTitle = "Home page";
+  - var pageClass = "homepage";
 
 block content
-  div Hello World
-     include ../img/svg/gulp.svg
+  //.webp-img(data-webp="img/Rectangle5.webp" data-img="img/Rectangle5.jpg")
+
+    <picture>
+     <source srcset="img/awesomeWebPImage.webp" type="image/webp">
+     <source srcset="img/creakyOldJPEG.jpg" type="image/jpeg">
+     <img src="img/creakyOldJPEG.jpg" alt="Alt Text!">
+    </picture>
+
+  div.main-wrap
+    main
+      h1.main-title-page Boost your Sales With Powerful Marketing Materials For Small Business
+
+      .section
+        .first-block
+          .container
+            .first-block__inner
+              .section-title.section-title--white.first-block__title Boost your Sales With Powerful Marketing Materials For Small Business
+              .first-block__list
+                .first-block__item
+                  b 2500+
+                  |  high-quality and easy to use graphic design templates;
+                .first-block__item
+                  b 6
+                  |  file formats for professional and amateurs use both Mac as well as Windows;
+                .first-block__item
+                  b 100+
+                  |  variations of styles to cover all your requirements;
+                .first-block__item Countless save time, effort and money.
+          .first-block__video.webp-img
+            .first-block__video-bg--cloud.webp-img.b-lazy(data-webp="img/cloud3.webp" data-img="img/cloud3.png")
+            .first-block__video-inner
+              .first-block__video-laptop
+                .first-block__video-laptop-bg.webp-img.b-lazy(data-webp="img/macbook.webp" data-img="img/macbook.png")
+                a(href="javascript:void(0);").first-block__video-link.link.webp-img.b-lazy(data-webp="img/video-placeholder.webp" data-img="img/video-placeholder.png")
+      .section
+        .clock-block
+          .container
+            .clock-block__inner
+              .clock-block__txt Only 2 days offer! Catch marketing materials design just for
+                span $29
+            .clock-block__item 02 : 12 : 24 : 36
+            .clock-block__btn-wrap
+              a(href="javascript:void(0);").btn.clock-block__btn Get with the discount now
+
+      .section
+        .profit
+          .container
+            .profit__inner
+              .section-title.profit__title What Profit Can I Get?
+              .profit__list
+                .profit__item
+                  .profit__column
+                    .profit__name Extend your audience, make the brand visible through:
+                    .profit__txt
+                      span PowerPoint
+                      span Business cards
+                      span Logo
+                    .btn.profit__btn Details
+                  .profit__column
+                    .profit__img
+                      include ../img/wpcig1.svg
+                .profit__item
+                  .profit__column
+                    .profit__img
+                      include ../img/wpcig2.svg
+                  .profit__column
+                    .profit__name Catch attention, be recognizable, boost direct income due to:
+                    .profit__txt
+                      span Flyers and posters
+                      span Brochures
+                      span Stationary
+                    .btn.profit__btn Details
+                .profit__item
+                  .profit__column
+                    .profit__name Get more followers, shares, conversions and drive your sales thanks to:
+                    .profit__txt
+                      span Social media covers and post
+                      span Web banners
+                    .btn.profit__btn Details
+                  .profit__column
+                    .profit__img
+                      include ../img/wpcig3.svg
+                .profit__item
+                  .profit__column
+                    .profit__img
+                      include ../img/wpcig4.svg
+                  .profit__column
+                    .profit__name Encourage, care and gain the trust of your clients via:
+                    .profit__txt
+                      span Coupons and discounts
+                      span Greeting cards
+                    .btn.profit__btn Details
+
+      .section
+        .effort
+          .container
+            .effort__inner
+              .section-title.effort__title Effortlessly Get Started
+              .effort__row.effort__row-stop
+                .effort__list
+                  .effort__item Stop spending hours looking for “perfect marketing materials examples”;
+                  .effort__item Stop hiring designers to create some stunning layout for the effective brochure;
+                  .effort__item Stop paying tons of money for every print item variation or web banner to drive your sales;
+                .effort__img
+                  include ../img/effo-get-star1.svg
+              .effort__row.effort__row-start
+                .effort__img
+                  include ../img/effo-get-star2.svg
+                .effort__list
+                  .effort__item Start saving money for expensive design services and guides;
+                  .effort__item Start working on real strategies using basic marketing materials for small business;
+                  .effort__item Start promotion today and get the profit now.
+
+      .section
+        .key
+          .container
+            .key__inner
+              .section-title.section-title--white.key__title What are the Key Features of Marketing Packages for Small Business?
+              .key__content
+                .key__list
+                  .key__item
+                    .key__item-img
+                      include ../img/what-the-key1.svg
+                    .key__item-name Save time and money
+                    .key__item-txt Utilizing readymade marketing material templates is less time-consuming than creating designs from the ground up. Eventually, it results in cost savings for a company. The cost of creating preset forms will be considerably less expensive than having to reinvent documents every time they are needed.
+                    .key__item-btn-more
+                      span Read more
+                      a(href="javascript:void(0);") +
+                  .key__item
+                    .key__item-img
+                      include ../img/what-the-key2.svg
+                    .key__item-name Professional graphic design
+                    .key__item-txt Even if you don’t have graphic design experience, you probably know how to make adjustments to existing graphics. That’s the beauty of using a template: you already know how to use it.
+                    .key__item-btn-more
+                      span Read more
+                      a(href="javascript:void(0);") +
+                  .key__item
+                    .key__item-img
+                      include ../img/what-the-key3.svg
+                    .key__item-name Multiple file format
+                    .key__item-txt Includes all file formats for both Mac and Windows. The templates are all delivered in Adobe InDesign, Adobe Illustrator, Adobe Photoshop, MS PowerPoint, MS Word, Apple Pages formats. So, you're able to choose the format you want.
+                    .key__item-btn-more
+                      span Read more
+                      a(href="javascript:void(0);") +
+                    .key__item-img
+                      include ../img/what-the-key4.svg
+                    .key__item-name Variety of templates
+                    .key__item-txt If you're looking to put together some brochure, banner and so on to show off your corporate identity and branding guidelines, this business marketing kit is for you. You'll get hundreds of high-quality, promotional marketing material ideas in 1 easy-to-use bundle solution!
+                    .key__item-btn-more
+                      span Read more
+                      a(href="javascript:void(0);") +
+                    .key__item-img
+                      include ../img/what-the-key5.svg
+                    .key__item-name Variety of categories
+                    .key__item-txt Different types of marketing materials cover a huge variety of topics and categories including real estate, banking, insurance, production promotion, discounted services, travel, fashion, and more.
+                    .key__item-btn-more
+                      span Read more
+                      a(href="javascript:void(0);") +
+                    .key__item-img
+                      include ../img/what-the-key6.svg
+                    .key__item-name Variety of styles
+                    .key__item-txt This bundle includes a variety of styles to show off your brand guidelines. You'll find simplistic layouts, minimalistic designs, along with other professionally designed templates. The styles will suit almost any kind of project, besides include modern, colorful designs.
+                    .key__item-btn-more
+                      span Read more
+                      a(href="javascript:void(0);") +
+                    .key__item-img
+                      include ../img/what-the-key7.svg
+                    .key__item-name Print-ready CMYK
+                    .key__item-txt All the print templates are hi-res, high-quality CMYK files at 300 DPI with 3 mm bleed, making them print-ready, so as soon as you update your company info, you're good to go!
+                    .key__item-btn-more
+                      span Read more
+                      a(href="javascript:void(0);") +
+                    .key__item-img
+                      include ../img/what-the-key8.svg
+                    .key__item-name Easily customizable
+                    .key__item-txt Designed according to high standards, these templates are really simple to customize. You can easily update features like color swatches, editable text, vector-based icons, etc.
+                    .key__item-btn-more
+                      span Read more
+                      a(href="javascript:void(0);") +
+                    .key__item-img
+                      include ../img/what-the-key9.svg
+                    .key__item-name One-click color change
+                    .key__item-txt Using the “Global Color” feature, you can change the color of the entire booklet to match your brand, with just one click.
+                    .key__item-btn-more
+                      span Read more
+                      a(href="javascript:void(0);") +
+                    .key__item-img
+                      include ../img/what-the-key10.svg
+                    .key__item-name Brand consistency
+                    .key__item-txt All the designs you choose for your brand should be consistent so that your audience can tie them together and know it comes from the same business. It means keeping the consistent visual elements like brand color palette and templates. All of those things are taken into consideration here
+                    .key__item-btn-more
+                      span Read more
+                      a(href="javascript:void(0);") +
+
+      .section
+        .marketing
+          .conteiner
+            .marketing__inner
+              .marketing__content
+                .marketing__list
+                  .marketing__item
+                    .marketing__img
+                      include ../img/what-i-need__ico-arrow.svg
+                    .marketing__txt
+                      span Pick the marvelous template you preferred
+                  .marketing__item
+                    .marketing__img
+                      include ../img/what-i-need__ico-arrow.svg
+                    .marketing__txt
+                      span Easily customize it regarding your brand guidelines and business purposes
+                  .marketing__item
+                    .marketing__img
+                      include ../img/what-i-need__ico-print.svg
+                    .marketing__txt
+                      span Print or share via web and get more customers, sales, together with profits
+      .section
+        .strok-block
+          .container
+            .strok-block__inner
+              .section-title.section-title--white.strok-block__title Extend Your Audience, Make the Brand Visible and Boost the Profit Via Promotional Marketing Materials
+
+
+      .section
+        .info-block
+          .info-block__bg-img.webp-img.b-lazy(data-webp="img/presentation-frame.webp" data-img="img/presentation-frame.png")
+          .container
+            .info-block__inner
+              .info-block__jaw
+                span 112
+                | items
+              .section-title.info-block__title Powerpoint Presentation
+              .info-block__top
+                .info-block__txt Always remember about the
+                  b  Big Picture.
+                  |  Especially, when you’re
+                  b  presenting
+                  |  your business to the others or discussing some
+                  b  data
+                  |  with the potential clients or just informing the audience about
+                  |  your brand. Webinars, meetings, conferences — they all require a
+                  b  PowerPoint presentation.
+                  |  You'll ask why this type of marketing material is so significant?
+                .info-block__table
+                  .info-block__column Most people are visuals
+                  .info-block__column All your tons of words will be boring and static without visual interaction
+              .info-block__content
+                .info-block__subtite
+                .info-block__list
+                  .info-block__item Dozens of easy to edit high-quality slides;
+                  .info-block__item Every presentation is unique and helps to express each person's creativity plus style;
+                  .info-block__item All shapes, icons, maps, elements are 100% editable easy to change the size, colors without losing quality;
+                  .info-block__item The tone of infographics, illustrations to make your promotional marketing material ideas pop;
+                  .info-block__item All the templates are multi-purpose, furthermore, they can be used for any presentation project, company reports, lectures, exhibitions, etc;
+                  .info-block__item Marketing PPT set will help you turn data into an amazing presentation fast and save much time;
+                  .info-block__item One-click to change all colors to fully fit your brand’s color.
+                .info-block__program
+                  .info-block__program-name 112 Items compatible with
+                  .info-block__program-list
+                    include ../img/p-ico.svg
+                .info-block__btn-wrap
+                  a(href="javascript:void(0);").btn.info-block__btn See all items
+          .info-block__bottom
+            .container
+              .info-block__bottom-txt Dominate your market and use
+                b  PowerPoint
+                |  marketing material templates for any meetings.
+
+
+      .section
+        .info-block
+          .info-block__bg-img.webp-img.b-lazy(data-webp="img/busniess-card-frame.webp" data-img="img/busniess-card-frame.png")
+          .container
+            .info-block__inner
+              .info-block__jaw
+                span 115
+                | items
+              .section-title.info-block__title Business Card
+              .info-block__top
+                .info-block__txt The business card is simply an awesome custom printed marketing material tool.
+                .info-block__txt The template solution is the best for you to start. Why?
+              .info-block__content
+                .info-block__subtite
+                .info-block__list
+                  .info-block__item One of the basic benefits of starting with a business card template is to create a reasonably priced design quickly;
+                  .info-block__item Insert text, images into the template, substitute the color palette and you're ready to print in one sitting;
+                  .info-block__item Although a business card is a small piece, it can contain a lot of information;
+                  .info-block__item Both US and EU formats;
+                  .info-block__item Fully print-ready;
+                  .info-block__item Free fonts used.
+                .info-block__program
+                  .info-block__program-name 115 Items compatible with
+                  .info-block__program-list
+                    include ../img/ai-ico.svg
+                    include ../img/eps-ico.svg
+                    include ../img/ps-ico.svg
+                    include ../img/idml-ico.svg
+                    include ../img/id-ico.svg
+                    include ../img/word-ico.svg
+                    include ../img/pencil-ico.svg
+                .info-block__btn-wrap
+                  a(href="javascript:void(0);").btn.info-block__btn See all items
+          .info-block__bottom
+            .container
+              .info-block__bottom-txt Here are a few hundreds of
+                b  unique business cards
+                |  to choose from.
+
+
+
+
+
+
+
