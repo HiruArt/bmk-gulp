@@ -1,0 +1,28 @@
+include _mixins
+
+block vars
+
+doctype html
+html(lang="")
+  head
+    meta(charset="utf-8")
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name="viewport", content="width=device-width, initial-scale=1")
+    title #{pageTitle}
+    meta(name='description', content= pageDescription)
+    meta(name='keywords', content= pageKeywords)
+    link(rel="icon" href="img/favicon.ico" type="image/x-icon")
+    
+    link(rel='stylesheet', href='css/style.min.css')
+
+  body.page
+    .page__wrapper
+      include modules/_header
+
+      main.page__content
+        block content
+
+      include modules/_footer
+    block scripts 
+      script(src='/js/libs/jquery.min.js')
+      script(src='/js/main.min.js')
