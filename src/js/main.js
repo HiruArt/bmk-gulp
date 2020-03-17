@@ -1,17 +1,24 @@
 $(document).ready(function(){
 
   // checking browser for WEBP
-  if (hasWebP) {
-    $('.webp-img').each(function(){
-      var img = $(this).attr('data-webp');
-      $(this).attr('data-blazy', img);
+  hasWebP().then(function () {
+    $('.webp-img').each(function () {
+      var webp = $(this).data('webp');
+      $(this).attr('data-blazy', webp);
     });
-  } else {
-    $('.webp-img').each(function(){
-      var img = $(this).attr('data-img');
-      $(this).attr('data-blazy', img);
+    var bLazy = new Blazy({
+      src: 'data-blazy'
     });
-  }
+  }, function () {
+    $('.webp-img').each(function () {
+      var img = $(this).data('img');
+      $(this).attr('data-blazy',  img );
+    });
+    var bLazy = new Blazy({
+      src: 'data-blazy'
+    });
+  });
+
 
   var bLazy = new Blazy({
     src: 'data-blazy'
