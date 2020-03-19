@@ -509,7 +509,8 @@ a {
     background-repeat: no-repeat;
     background: white;
 
-    z-index: 1;
+
+    z-index: 2;
     justify-content: space-between;
     align-items: center;
 
@@ -517,22 +518,26 @@ a {
       content: '';
       background: url("../img/profit__item-bg.svg") center no-repeat;
       background-size: 100%;
+      background-size: calc(100% + 1px);
       height: 127px;
       position: absolute;
       top: -120px;
       left: 0;
       width: 100%;
+      z-index: -1;
     }
 
     &:after {
       content: '';
       background: url("../img/profit__item-bg.svg") center no-repeat;
       background-size: 100%;
+      background-size: calc(100% + 1px);
       height: 127px;
       position: absolute;
       bottom: -120px;
       width: 100%;
       left: 0;
+      z-index: -1;
     }
 
     &--1 {
@@ -2162,10 +2167,71 @@ a {
     padding-top: 180px;
   }
 
+  .blue-block {
+    padding: 230px 0;
+  }
+
+  .blue-block__item {
+    max-width: 989px;
+    margin-left: auto;
+  }
+
+  .blue-block--revers .blue-block__item {
+    margin-left: initial;
+  }
+
+  .blue-block__persona{
+    transform: scale(0.8);
+  }
+
+  .blue-block__item:before {
+    top: -95px;
+  }
+
+  .blue-block__item:after {
+    bottom: -95px;
+  }
+
+  .blue-block__leaf {
+    display: none;
+  }
+
+  .blue-block__persona--2,
+  .blue-block__persona--4 {
+    right: 0;
+    top: -20px;
+    transform: translateX(70%) scale(0.8);
+  }
+
 }
 
 @media (max-width: 1600px) {
 
+  .section-title {
+    padding: 0 15px;
+  }
+
+  .profit__item:before {
+    top: -112px;
+  }
+
+  .profit__item:after {
+    bottom: -112px;
+  }
+}
+
+@media (max-width: 1300px) {
+  .clock-block--bottom .clock-block__item:after, .clock-block--bottom .clock-block__item:before {
+    width: 165px;
+    height: 195px;
+    top: 80px;
+  }
+  .clock-block--bottom .clock-block__item:before {
+    left: 65px;
+  }
+  .clock-block--bottom .clock-block__item:after {
+    right: 65px;
+  }
 }
 
 
@@ -2185,9 +2251,32 @@ a {
   .first-block__video-inner {
     padding-top: 60px;
   }
+
+  .marketing__item {
+    width: 285px;
+    height: 285px;
+  }
+
+  .marketing__txt {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .marketing__img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .section-title {
+    font-size: 36px;
+    line-height: 44px;
+  }
+
+
 }
 
 @media (max-width: 992px){
+
   .first-block__video-laptop--leaf01 {
     display: none;
   }
