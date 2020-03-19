@@ -24,6 +24,21 @@ $(document).ready(function(){
     src: 'data-blazy'
   });
 
+  $('.first-block__video-link').click(function(e){
+    $('.video').addClass('open');
+  });
+
+  $('.video__close').click(function (e) {
+    $('.video').removeClass('open');
+    $('.youtube-video')[0].contentWindow.postMessage('{"event":"command","func":"' + 'pauseVideo' + '","args":""}', '*');
+  });
+
+  $(document).on('click', '.video', function (e) {
+    if(e.target.classList[0] == 'video'){
+      $('.video').removeClass('open');
+      $('.youtube-video')[0].contentWindow.postMessage('{"event":"command","func":"' + 'pauseVideo' + '","args":""}', '*');
+    }
+  });
 
 });
 
@@ -52,3 +67,72 @@ var hasWebP = (function () {
     return deferred.promise();
   }
 })();
+
+
+function getTimeRemaining(endtime) {
+    var t = Date.parse(endtime) - Date.parse(new Date());
+    var seconds = Math.floor((t / 1000) % 60);
+    var minutes = Math.floor((t / 1000 / 60) % 60);
+    var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
+    var days = Math.floor(t / (1000 * 60 * 60 * 24));
+    return {
+        'total': t,
+        'days': days,
+        'hours': hours,
+        'minutes': minutes,
+        'seconds': seconds
+    };
+}
+
+function initializeClock(id, endtime) {
+    var clock = document.getElementById(id);
+    var daysSpan = clock.querySelector(".days");
+    var hoursSpan = clock.querySelector(".hours");
+    var minutesSpan = clock.querySelector(".minutes");
+    var secondsSpan = clock.querySelector(".seconds");
+
+    function updateClock() {
+        var t = getTimeRemaining(endtime);
+
+        if (t.total <= 0) {
+            document.getElementById("countdown").className = "clock-block__item-content clock-block--dedline";
+            clearInterval(timeinterval);
+            return true;
+        }
+
+        daysSpan.innerHTML = ("0" + t.days);
+        hoursSpan.innerHTML = ("0" + t.hours).slice(-2);
+        minutesSpan.innerHTML = ("0" + t.minutes).slice(-2);
+        secondsSpan.innerHTML = ("0" + t.seconds).slice(-2);
+    }
+
+    updateClock();
+    var timeinterval = setInterval(updateClock, 1000);
+}
+function initializeClock(id, endtime) {
+    var clock = document.getElementById(id);
+    var daysSpan = clock.querySelector(".days");
+    var hoursSpan = clock.querySelector(".hours");
+    var minutesSpan = clock.querySelector(".minutes");
+    var secondsSpan = clock.querySelector(".seconds");
+
+    function updateClock() {
+        var t = getTimeRemaining(endtime);
+
+        if (t.total <= 0) {
+            document.getElementById("countdown").className = "clock-block__item-content clock-block--dedline";
+            document.getElementById("countdown1").className = "clock-block__item-content clock-block--dedline";
+            clearInterval(timeinterval);
+            return true;
+        }
+
+        daysSpan.innerHTML = ("0" + t.days);
+        hoursSpan.innerHTML = ("0" + t.hours).slice(-2);
+        minutesSpan.innerHTML = ("0" + t.minutes).slice(-2);
+        secondsSpan.innerHTML = ("0" + t.seconds).slice(-2);
+    }
+
+    updateClock();
+    var timeinterval = setInterval(updateClock, 1000);
+}
+
