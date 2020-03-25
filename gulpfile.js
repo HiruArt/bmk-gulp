@@ -27,7 +27,10 @@ gulp.task('sass', () => {
   return gulp.src('src/sass/style.scss') // take the source
     .pipe(cssImport())
     .pipe(sass().on('error', sass.logError))
-    .pipe(autoprefixer())
+    .pipe(autoprefixer({
+      overrideBrowserslist:  ['last 2 versions'],
+      cascade: true
+    }))
     .pipe(gulp.dest('dist/css/')) // upload the result to the desired folder
     .pipe(cssmin())
     .pipe(rename({suffix: '.min'}))
@@ -61,6 +64,7 @@ gulp.task('js', () => {
 gulp.task('css-libs', () => {
   return gulp.src([
       'node_modules/normalize.css/normalize.css',
+      // 'node_modules/lightbox2/dist/css/lightbox.min.css',
       // 'node_modules/aos/dist/aos.css'
   ])
     .pipe(gulp.dest('dist/css/libs/'))
@@ -74,6 +78,7 @@ gulp.task('css-libs', () => {
 gulp.task('js-libs', () => {
   return gulp.src([
       'node_modules/jquery/dist/jquery.min.js',
+      // 'node_modules/lightbox2/dist/js/lightbox.min.js',
       // 'node_modules/aos/dist/aos.js',
       'node_modules/blazy/blazy.min.js',
     ])
@@ -87,14 +92,15 @@ gulp.task('js-libs', () => {
 
 gulp.task('img', () => {
   return gulp.src('src/img/**/*')
-    .pipe(webp())
-    .pipe(cache(imagemin([
-      pngquant(),
-      imageminMozjpeg({
-          progressive: true
-      }),
-    ],{verbose: true})))
+    // .pipe(cache(imagemin([
+    //   pngquant(),
+    //   imageminMozjpeg({
+    //       progressive: true
+    //   }),
+    // ],{verbose: true})))
     .pipe(gulp.dest('dist/img/'))
+		.pipe(webp())
+		.pipe(gulp.dest('dist/img/'))
     .pipe(browserSync.reload({stream: true}));
 });
 
