@@ -166,6 +166,20 @@ $(document).ready(function(){
 		}, 200);
 	});
 
+  $(document).on('click', '.header__menu-btn', function (e) {
+		$('.header__right').toggleClass('open');
+		$('body').toggleClass('over-hidden');
+	});
+
+	$(document).on('click', '.header__right ', function (e) {
+		console.log(e.target.classList[0]);
+		if(e.target.classList[0] == 'header__right'){
+			$('.header__right ').removeClass('open');
+		}
+	});
+
+
+
 });
 
 
