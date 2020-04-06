@@ -156,6 +156,27 @@ $(document).ready(function(){
 	});
 
 
+  $('.info-block__btn--social-media-covers').click(function () {
+		bodyOverwlow();
+		$('.popup.social-media-covers').addClass('open')
+		setTimeout(function () {
+			var bLazy = new Blazy({
+				src: 'data-blazy'
+			});
+		}, 200);
+	});
+
+  $('.info-block__btn--web-banners').click(function () {
+		bodyOverwlow();
+		$('.popup.web-banners').addClass('open')
+		setTimeout(function () {
+			var bLazy = new Blazy({
+				src: 'data-blazy'
+			});
+		}, 200);
+	});
+
+
   $('.info-block__btn--coupons-discounts').click(function () {
 		bodyOverwlow();
 		$('.popup.coupons-discounts').addClass('open')
@@ -176,6 +197,21 @@ $(document).ready(function(){
 		if(e.target.classList[0] == 'header__right'){
 			$('.header__right ').removeClass('open');
 		}
+	});
+
+
+	$('.popup__content').on('scroll', function() {
+		console.log('scroll!');
+		var bLazy = new Blazy({
+			src: 'data-blazy'
+		});
+	});
+
+	$(document).on("click","a.profit__btn", function (event) {
+		event.preventDefault();
+		var id  = $(this).attr('href'),
+			  top = $(id).offset().top;
+		$('body,html').animate({scrollTop: top}, 5000);
 	});
 
 
